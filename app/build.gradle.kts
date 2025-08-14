@@ -58,6 +58,12 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 
+    //Constraintlayourt
+    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
+
+    //Recyclerview
+     implementation("androidx.recyclerview:recyclerview:1.3.0")
+
 
 
 }
