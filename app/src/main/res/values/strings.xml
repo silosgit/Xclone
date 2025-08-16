@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Xclone</string>
+    <string name="TaskNameTextView">What is it to be done?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="isTaskDone">Task Finished?</string>
+    <string name="DueDate">Due date</string>
+    <string name="Save">Save</string>
+
 </resources>

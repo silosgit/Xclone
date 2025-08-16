@@ -10,16 +10,17 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.xclone.xclone.R
+import com.xclone.xclone.model.TaskModel
 
 class RecViewTasksAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private var Items:List<String> = ArrayList();
+    private var Items: ArrayList<TaskModel> = ArrayList();
     lateinit var context: Context
     constructor(context:Context) : super() {
         this.context= context
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return RecViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.rec_view_items,parent,false)
+            LayoutInflater.from(parent.context).inflate(R.layout.rec_view_items, parent,false)
         )
     }
 
@@ -30,7 +31,7 @@ class RecViewTasksAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when(holder){
             is RecViewHolder ->{
-                holder.bind(context,Items.get(position),position)
+                holder.bind(context,Items.get(position).taskName,position)
 
             }
         }
@@ -46,8 +47,12 @@ class RecViewTasksAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
 
     }
-    fun newItem(keyDataModel: List<String>){
-        Items=keyDataModel
+    fun newItem(tasks: TaskModel){
+        Items.add(tasks)
+        notifyDataSetChanged()
+    }
+    fun setUpList(tasks: List<TaskModel> ){
+        Items= ArrayList(tasks)
         notifyDataSetChanged()
     }
 }
